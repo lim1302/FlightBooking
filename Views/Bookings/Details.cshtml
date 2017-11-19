@@ -1,0 +1,91 @@
+@model UkraineAirline.Models.Booking
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt  style="font-size:18px">Flight Details</dt><dd></dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BookingDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BookingDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.FlightNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.FlightNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.Origin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.Origin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.Destination)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.Destination)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.Departure)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.Departure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Flight.Arrival)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Flight.Arrival)
+        </dd>
+        <dt style="font-size:18px">Passenger Details</dt><dd></dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.IC)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.IC)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Nationality)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Nationality)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Age)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Age)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Phone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Phone)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

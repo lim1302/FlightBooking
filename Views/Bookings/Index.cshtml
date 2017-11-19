@@ -1,0 +1,69 @@
+@model IEnumerable<UkraineAirline.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Booking</h2>
+
+<p>
+    <a asp-controller="Flights" asp-action="Search">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookingDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.FlightNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Origin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Destination)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Departure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Flight.Arrival)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Passenger.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.FlightNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.Origin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.Destination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.Departure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Flight.Arrival)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passenger.Name)
+        </td>
+        <td>
+            <a asp-action="Details" asp-route-id="@item.BookingID" asp-route-bookingId="@item.BookingID">Details</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,64 @@
+@model IEnumerable<UkraineAirline.Models.Flight>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Search</h2>
+
+<form asp-action="Search" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Departure: <input type="text" name="origin" value="@ViewData["origin"]" />
+            Destination: <input type="text" name="destination" value="@ViewData["destination"]" />
+            Date: <input type="date" name="date" value="@ViewData["date"]" />
+            <input type="submit" value="Search" class="btn btn-default" />
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FlightNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Origin)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Destination)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Departure)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Arrival)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Origin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Destination)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Departure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Arrival)
+            </td>
+            <td>
+                <a asp-controller="Bookings" asp-action="Create" asp-route-flightId="@item.FlightID">Book</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
